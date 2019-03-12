@@ -1,0 +1,30 @@
+
+<div class="all-info">
+  <div class="scooter-info">
+    <div class="scooter-info-header">
+      <p>THE SCOOTER</p>
+    </div>
+    <div class="scooter-info-body">
+      <h2><%= scooter.make %> <%= scooter.model %></h2>
+      <h3><%= scooter.year %></h3>
+      <p><i class="fas fa-burn"></i><%= scooter.engine %></p>
+    </div>
+  </div>
+  <div class="host-info">
+    <div class="host-info-header">
+      <p>HOSTED BY</p>
+    </div>
+    <div class="host-info-body">
+      <p><%= scooter.owner.name %></p>
+      <p><%= scooter.owner.created_at %></p>
+    </div>
+  </div>
+  <div class="description-info">
+    <div class="description-info-header">
+      <p>DESCRIPTION</p>
+    </div>
+    <div class="description-info-body">
+      <p><%= scooter.description %></p>
+    </div>
+  </div>
+</div>

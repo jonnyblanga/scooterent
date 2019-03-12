@@ -5,27 +5,9 @@
 </div>
 
 <div class="show-container">
-  <div class="car-info">
-    <h1>THE SCOOTER</h1>
-    <h2><%= @scooter.make %> <%= @scooter.model %></h2>
-    <h3><%= @scooter.year %></h3>
-    <p><i class="fas fa-burn"></i><%= @scooter.engine %></p>
-    <h1>HOSTED BY</h1>
-    <p><%= @scooter.owner.name %></p>
-    <p><%= @scooter.owner.created_at %></p>
-    <h1>DESCRIPTION</h1>
-    <p><%= @scooter.description %></p>
-  </div>
 
-  <div class="cost">
-    <h1>$<%= @scooter.price %> per day</h1>
-    <%= simple_form_for @reservation do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= hidden_field_tag(:scooter_id, @scooter.id) %>
-      <%= f.button :submit %>
-<% end %>
+  <%= render partial: "partials/all_info", locals: {scooter: @scooter} %>
 
-  </div>
+  <%= render partial: "partials/cost_form", locals: {reservation: @reservation, scooter: @scooter} %>
 
 </div>
