@@ -32,7 +32,7 @@ puts 'Creating fake User...'
     address: Faker::Address.street_address,
     license_photo: Faker::Avatar.image,
     email: Faker::Internet.email,
-    password: Faker::Internet.password,
+    password: Faker::Internet.password
   )
 
 end
@@ -53,8 +53,8 @@ puts 'Creating faker Scooters...'
       engine: ["Disel", "Gasoline", "Eletrical", "gpl", "hybrid"].sample,
       user: User.all.sample
    )
-
   end
+puts "Finished the Scooters! #{Scooter.all.count}"
 
 puts 'Creating faker Reservations...'
 
@@ -69,7 +69,6 @@ end
 
 puts "Finished the Reservations! #{Reservation.all.count}"
 
-puts "Finished the Scooters! #{Scooter.all.count}"
 
 
 puts 'Creating faker Reviews...'

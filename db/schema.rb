@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_145840) do
   end
 
   create_table "scooters", force: :cascade do |t|
-    t.string "photo", default: ""
+    t.string "photo"
     t.text "description"
     t.string "license_plate"
     t.string "model"

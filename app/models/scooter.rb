@@ -15,6 +15,6 @@ class Scooter < ApplicationRecord
   validates :price, presence: true
   validates :engine, inclusion: { in: %w(Disel Gasoline Eletrical gpl hybrid) }
 
-  mount_uploader :photo, PhotoUploader
+  # mount_uploader :photo, PhotoUploader
 
 end
