@@ -5,4 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :scooters
   has_many :reservations
+
+  def major_age?
+    (DateTime.now - :birthday).to_i >= 18
+  end
+
+  validates :email, uniqueness: true
+  validates :birthday, :presence => true
+
+
 end
