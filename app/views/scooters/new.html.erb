@@ -1,0 +1,17 @@
+<!-- <h1>Scooters#new</h1>
+<p>Find me in app/views/scooters/new.html.erb</p>
+ -->
+
+ <h1>List your scooter</h1>
+
+<%= simple_form_for @scooter do |f| %>
+  <%= f.input :make, label: 'Your username please', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :model, hint: 'No special characters.' %>
+  <%= f.input :year, placeholder: 'user@domain.com' %>
+  <%= f.input :license_plate, placeholder: 'user@domain.com' %>
+  <%= f.input :price %>
+  <%= f.input :engine %>
+  <%= f.input :photo %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>
