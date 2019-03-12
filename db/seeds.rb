@@ -15,7 +15,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
-require 'pry'
+
 
 puts 'Cleaning database...'
 Review.destroy_all
@@ -51,7 +51,7 @@ puts 'Creating faker Scooters...'
       photo: Faker::Avatar.image,
       license_plate: Faker::Vehicle.license_plate,
       price: Faker::Commerce.price,
-      engine: Faker::Vehicle.fuel_type,
+      engine: ["Disel", "Gasoline", "Eletrical", "gpl", "hybrid"].sample,
       user: User.all.sample
    )
 
