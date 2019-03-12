@@ -4,9 +4,9 @@ class Reservation < ApplicationRecord
 
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :user, if: :not_owner?
+  # validates :user, if: :not_owner?
 
-  def not_owner?
-    :scooter.user != :user
-  end
+  # def not_owner?
+  #   :scooter.user != :user
+  # end
 end
