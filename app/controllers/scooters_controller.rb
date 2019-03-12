@@ -5,6 +5,7 @@ class ScootersController < ApplicationController
   end
 
   def show
+    @scooter
     @reservation = Reservation.new
   end
 

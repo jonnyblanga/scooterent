@@ -1,26 +1,20 @@
 <!-- <h1>Scooters#show</h1>
 <p>Find me in app/views/scooters/show.html.erb</p> -->
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @scooter.photo, crop: :fill%>');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @scooter.photo %>);">
 </div>
 
-<!-- <div class="information">
-  <ul>
-    <li>Make: <%= @scooter.make %></li>
-    <li>Model: <%= @scooter.model %></li>
-    <li>Year: <%= @scooter.year %></li>
-    <li>License Plate: <%= @scooter.license_plate %></li>
-    <li>Price: <%= @scooter.price %></li>
-    <li>Engine Type: <%= @scooter.engine %></li>
-    <li>Description: <%= @scooter.description %></li>
-  </ul>
-</div>
- -->
 <div class="show-container">
   <div class="car-info">
-    <h1><%= @scooter.make %> <%= @scooter.model %></h1>
-    <h2><%= @scooter.year %></h2>
+    <h1>THE SCOOTER</h1>
+    <h2><%= @scooter.make %> <%= @scooter.model %></h2>
+    <h3><%= @scooter.year %></h3>
     <p><i class="fas fa-burn"></i><%= @scooter.engine %></p>
+    <h1>HOSTED BY</h1>
+    <p><%= @scooter.owner.name %></p>
+    <p><%= @scooter.owner.created_at %></p>
+    <h1>DESCRIPTION</h1>
+    <p><%= @scooter.description %></p>
   </div>
 
   <div class="cost">

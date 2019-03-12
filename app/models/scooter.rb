@@ -3,5 +3,8 @@ class Scooter < ApplicationRecord
   has_many :reservations, dependent: :destroy
   has_many :users, through: :reservations
   has_many :reviews, through: :reservations
-  mount_uploader :photo, PhotoUploader
+
+  def owner
+    self.user
+  end
 end
