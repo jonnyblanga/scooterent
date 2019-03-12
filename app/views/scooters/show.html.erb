@@ -1,2 +1,30 @@
-<h1>Scooters#show</h1>
-<p>Find me in app/views/scooters/show.html.erb</p>
+<!-- <h1>Scooters#show</h1>
+<p>Find me in app/views/scooters/show.html.erb</p> -->
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @scooter.photo, crop: :fill%>');">
+</div>
+
+<!-- <div class="information">
+  <ul>
+    <li>Make: <%= @scooter.make %></li>
+    <li>Model: <%= @scooter.model %></li>
+    <li>Year: <%= @scooter.year %></li>
+    <li>License Plate: <%= @scooter.license_plate %></li>
+    <li>Price: <%= @scooter.price %></li>
+    <li>Engine Type: <%= @scooter.engine %></li>
+    <li>Description: <%= @scooter.description %></li>
+  </ul>
+</div>
+ -->
+<div class="show-container">
+  <div class="car-info">
+    <h1><%= @scooter.make %> <%= @scooter.model %></h1>
+    <h2><%= @scooter.year %></h2>
+    <p><i class="fas fa-burn"></i><%= @scooter.engine %></p>
+  </div>
+
+  <div class="cost">
+    <h1>$<%= @scooter.price %> per day</h1>
+  </div>
+
+</div>
