@@ -6,10 +6,12 @@ class ScootersController < ApplicationController
 
   def show
     @scooter
+    @reservation = Reservation.new
   end
 
   def new
     @scooter = Scooter.new
+    @reservation = Reservation.new
   end
 
   def create
