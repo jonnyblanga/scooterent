@@ -15,63 +15,76 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'pry'
 
 puts 'Cleaning database...'
-User.destroy_all
 Review.destroy_all
-Scooter.destroy_all
 Reservation.destroy_all
+Scooter.destroy_all
+User.destroy_all
 
 puts 'Creating fake User...'
 
-i = 1
-10.times do
-  user = User.new(
+
+15.times do
+  user = User.create(
     name: Faker::Name.first_name,
     birthday: Faker::Date.birthday(18, 65),
-    address:Faker::Address.street_address,
-    license_photo: "",
-    email:Faker::Internet.email,
-    encrypted_password: 123456
+    address: Faker::Address.street_address,
+    license_photo: Faker::Avatar.image,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password,
   )
-  user.save
-  i += 1
+
 end
 
-puts "Finished the User! #{User.all.count}"
+puts "Finished the Users! #{User.all.count}"
 
-# puts 'Creating faker Scooters...'
-# url = "https://images.unsplash.com/photo-1495608312049-285ae516323d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+puts 'Creating faker Scooters...'
 
-# i = 1
-# 30.times do
-#   Scooter = Scooter.new(
-#     name: Faker::Movie.quote
-#   )
-#   Scooter.remote_photo_url = url
+  30.times do
+    scooter = Scooter.create(
+      make: Faker::Vehicle.make,
+      model: Faker::Vehicle.model,
+      year: Faker::Vehicle.year,
+      description: Faker::Lorem.paragraph,
+      photo: Faker::Avatar.image,
+      license_plate: Faker::Vehicle.license_plate,
+      price: Faker::Commerce.price,
+      engine: Faker::Vehicle.fuel_type,
+      user: User.all.sample
+   )
 
-#   next unless Scooter.save
+  end
 
-#   i += 1
-# end
-# puts "Finished the Scooters! #{Scooter.all.count}"
+puts 'Creating faker Reservations...'
 
-# puts 'Creating fake doses...'
+15.times do
+  reservation = Reservation.create(
+    start_date: Faker::Date.between(Date.today, 10.days.from_now ),
+    end_date: Faker::Date.between(20.days.from_now, 30.days.from_now ),
+    user: User.all.sample,
+    scooter: Scooter.all.sample
+  )
+end
 
-# Scooter.all.each do |Scooter|
-#   i = 1
-#   dose = Dose.new(
-#     description: Faker::Food.measurement,
-#     cocktail_id: cocktail.id,
-#     ingredient_id: (1...50).to_a.sample
-#   )
-#   if dose.save
-#   else
-#     next
-#   end
-#   i += 1
-# end
+puts "Finished the Reservations! #{Reservation.all.count}"
 
-# puts 'Finished the doses!'
+puts "Finished the Scooters! #{Scooter.all.count}"
+
+
+puts 'Creating faker Reviews...'
+50.times do
+  review = Review.create(
+    comment: Faker::Lorem.paragraph,
+    rating: Faker::Number.between(1, 5),
+    reservation: Reservation.all.sample
+  )
+
+end
+
+puts "Finished the Reviews! #{Review.all.count}"
+
+
 
 puts 'Finished all seed!'
