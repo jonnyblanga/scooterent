@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # get 'scooters/update'
   # get 'scooters/destroy'
   devise_for :users
-  root to: 'scooters#index'
+  root to: 'pages#home'
   resources :scooters, except: :index
   resources :reservations
 

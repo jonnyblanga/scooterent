@@ -39,6 +39,15 @@ end
 
 puts "Finished the Users! #{User.all.count}"
 
+url = []
+url << "https://images.unsplash.com/photo-1505164912965-def2a2a01d4b?ixlib=rb-1.2.1&dpr=2&auto=format&fit=crop&w=525&q=60"
+url << "https://images.unsplash.com/photo-1516908943150-a2494e04a52d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+url << "https://images.unsplash.com/photo-1480544967375-135f88f06bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+url << "https://images.unsplash.com/photo-1494851199343-9e626cbee310?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+url << "https://images.unsplash.com/photo-1516423485787-e433022a4801?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+url << "https://images.unsplash.com/photo-1518281989264-a47a2ee4bbb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+url << "https://images.unsplash.com/photo-1495608312049-285ae516323d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+
 puts 'Creating faker Scooters...'
 
   30.times do
@@ -47,7 +56,7 @@ puts 'Creating faker Scooters...'
       model: Faker::Vehicle.model,
       year: Faker::Vehicle.year,
       description: Faker::Lorem.paragraph,
-      photo: Faker::Avatar.image,
+      photo: url.sample,
       license_plate: Faker::Vehicle.license_plate,
       price: Faker::Commerce.price,
       engine: ["Disel", "Gasoline", "Eletrical", "gpl", "hybrid"].sample,
