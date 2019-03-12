@@ -15,6 +15,12 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :name %>
+    <label>Birthday</label>
+    <%= date_select :user, :birthday, :start_year => (Date.current.year - 18), :end_year => (Date.current.year - 90)
+%>
+    <%= f.input :address %>
+    <%= f.input :license_photo %>
   </div>
 
   <div class="form-actions">

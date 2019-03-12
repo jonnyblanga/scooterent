@@ -13,9 +13,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 require 'faker'
-require 'pry'
+
 
 puts 'Cleaning database...'
 Review.destroy_all
@@ -33,7 +32,7 @@ puts 'Creating fake User...'
     address: Faker::Address.street_address,
     license_photo: Faker::Avatar.image,
     email: Faker::Internet.email,
-    password: Faker::Internet.password,
+    password: Faker::Internet.password
   )
 
 end
@@ -51,11 +50,11 @@ puts 'Creating faker Scooters...'
       photo: Faker::Avatar.image,
       license_plate: Faker::Vehicle.license_plate,
       price: Faker::Commerce.price,
-      engine: Faker::Vehicle.fuel_type,
+      engine: ["Disel", "Gasoline", "Eletrical", "gpl", "hybrid"].sample,
       user: User.all.sample
    )
-
   end
+puts "Finished the Scooters! #{Scooter.all.count}"
 
 puts 'Creating faker Reservations...'
 
@@ -70,7 +69,6 @@ end
 
 puts "Finished the Reservations! #{Reservation.all.count}"
 
-puts "Finished the Scooters! #{Scooter.all.count}"
 
 
 puts 'Creating faker Reviews...'
