@@ -2,16 +2,17 @@
 <p>Find me in app/views/scooters/new.html.erb</p>
  -->
 
- <h1>List your scooter</h1>
+<h1>List your scooter</h1>
 
 <%= simple_form_for @scooter do |f| %>
-  <%= f.input :make, label: 'Your username please', error: 'Username is mandatory, please specify one' %>
-  <%= f.input :model, hint: 'No special characters.' %>
-  <%= f.input :year, placeholder: 'user@domain.com' %>
-  <%= f.input :license_plate, placeholder: 'user@domain.com' %>
+  <%= f.input :make %>
+  <%= f.input :model %>
+  <%= f.input :year %>
+  <%= f.input :license_plate %>
   <%= f.input :price %>
   <%= f.input :engine %>
-  <%= f.input :photo %>
   <%= f.input :description %>
+  <%= f.input :photo, class: "align-text" %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit %>
 <% end %>

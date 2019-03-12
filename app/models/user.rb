@@ -3,15 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :scooters
-  has_many :reservations
-
-  def major_age?
-    (DateTime.now - :birthday).to_i >= 18
-  end
+  
+  has_many :scooters, through: :reservations
+  has_many :reservations, dependent: :destroy
 
   validates :email, uniqueness: true
   validates :birthday, :presence => true
-
-
 end

@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+.banner {
+  width: 100%;
+  height: 600px;
+}
+.container {
+  height: 600px;
+}
+.info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px;
+}
+// style="background-image: url
+// (https://i.pinimg.com/originals/ee/a5/01/eea5017f16ad0c99a3849c2583d3f266.png);">
