@@ -69,8 +69,8 @@ puts 'Creating faker Reservations...'
 
 15.times do
   reservation = Reservation.create(
-    start_date: Faker::Date.between(Date.today, 10.days.from_now ),
-    end_date: Faker::Date.between(20.days.from_now, 30.days.from_now ),
+    start_date: (Faker::Date.between(Date.today, 10.days.from_now )).to_s,
+    end_date: (Faker::Date.between(20.days.from_now, 30.days.from_now )).to_s,
     user: User.all.sample,
     scooter: Scooter.all.sample
   )
