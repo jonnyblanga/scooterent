@@ -1,7 +1,7 @@
 class CreateScooters < ActiveRecord::Migration[5.2]
   def change
     create_table :scooters do |t|
-      t.string :photo
+      t.string :image
       t.text :description
       t.string :license_plate
       t.string :model

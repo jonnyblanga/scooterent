@@ -28,8 +28,8 @@
   <div class="row">
   <% @scooters_rand.each do |scooter_rand| %>
     <div class="col-md-4 contenitor">
-      <% if scooter_rand.photo.present? %>
-      <%= image_tag(scooter_rand.photo, class: "image") %>
+      <% if scooter_rand.image.present? %>
+      <%= cl_image_tag(scooter_rand.image, class: "image") %>
       <div class="overlay">
         <div class="text">
           <h2 class="landingpage-cards-brand"><%= scooter_rand.make %> </h2>

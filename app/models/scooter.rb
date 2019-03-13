@@ -14,8 +14,8 @@ class Scooter < ApplicationRecord
   validates :year, presence: true
   validates :price, presence: true
   validates :engine, inclusion: { in: %w(Disel Gasoline Eletrical gpl hybrid) }
-  mount_uploader :photo, PhotoUploader
-  
+  mount_uploader :image, PhotoUploader
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 end
