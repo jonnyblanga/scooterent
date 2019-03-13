@@ -1,5 +1,5 @@
 class ScootersController < ApplicationController
-  before_action :find_scooter, only: [:show]
+  before_action :find_scooter, only: [:show, :edit, :update]
   def index
     @scooters = Scooter.where.not(latitude: nil, longitude: nil)
 
@@ -14,13 +14,11 @@ class ScootersController < ApplicationController
   end
 
   def show
-    @scooter
     @reservation = Reservation.new
   end
 
   def new
     @scooter = Scooter.new
-    @reservation = Reservation.new
   end
 
   def create
@@ -31,6 +29,20 @@ class ScootersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @scooter
+  end
+
+  def update
+    @scooter.update(scooter_params)
+    redirect_to scooter_path(@scooter)
+  end
+
+  def destroy
+    @scooter.destroy
+    redirect_to scooters_path
   end
 
   private
