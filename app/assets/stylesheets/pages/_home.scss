@@ -1,7 +1,11 @@
 // Specific CSS for your home-page
+body {
+  background-color: white;
+}
+
 .banner {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-image: linear-gradient(-225deg, rgba(0,101,200,0.2) 0%, rgba(0,36,61,0.1) 25%), asset-url('car-city-classic-1429748.jpg');
   background-size: cover;
 }
@@ -12,16 +16,14 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-.info {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: white;
+  h1 {
+    font-size: 60px;
+  }
 }
 
-// style="background-image: url
-// (https://i.pinimg.com/originals/ee/a5/01/eea5017f16ad0c99a3849c2583d3f266.png);">
+.info {
+  padding-top: 50px;
+}
 
 .card {
   background-size: cover;
@@ -38,24 +40,47 @@
 .about-us {
   background-color: white;
   width: 100%;
-  height: 150px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  padding-top: 32px;
+  text-align: center;
+  h1 {
+    font-family: Freight, HoeflerText-Black, "Times New Roman", serif;
+  }
 }
+
+
+.info-about-us {
+  display: flex;
+  padding: 65px;
+  padding-top: 25px;
+  h3 {
+    color: #FDC112;
+    font-family: Plantin, AmericanTypewriter-Condensed, "Times New Roman", serif;
+     p {
+      font-family: BasisGrotesque, Avenir, "Helvetica Neue", Helvetica, sans-serif;
+    }
+  }
+}
+
+
 .divider {
-  background-color: #f9f9f9;
   width: 100%;
   height: 30px;
 }
+
 .our-offers {
-  background-color: #f9f9f9;
+  // background-color: #f9f9f9;
   width: 100%;
   height: 30px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 23px;
+  h3 {
+    font-family: Freight, HoeflerText-Black, "Times New Roman", serif;
+    font-size: 40px;
+  }
 }
+
 .element {
   display: none;
 }
