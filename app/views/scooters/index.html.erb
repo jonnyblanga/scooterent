@@ -13,6 +13,7 @@
   <% @scooters.each do |scooter| %>
     <div class="col-md-4 contenitor">
       <% if scooter.image.present? %>
+      <%= link_to scooter_path(scooter) do %>
       <%= cl_image_tag(scooter.image, class: "image") %>
       <div class="overlay">
         <div class="text">
@@ -21,6 +22,7 @@
           <h2 class="landingpage-cards-engine"><%= scooter.engine %> </h2>
         </div>
       </div>
+      <% end %>
       <% end %>
     </div>
   <% end %>

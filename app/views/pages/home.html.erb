@@ -7,7 +7,9 @@
     <div class="info">
       <h1>ScooteRent!</h1>
       <p>Way better than a rental company</p>
-      <a class="btn btn-success" href="#">Filter!</a>
+      <%= link_to scooters_path do %>
+      <button class="btn btn-success" >Filter!</button>
+      <% end  %>
     </div>
   </div>
 </div>
@@ -45,6 +47,7 @@
   <% @scooters_rand.each do |scooter_rand| %>
     <div class="col-md-4 contenitor">
       <% if scooter_rand.image.present? %>
+      <%= link_to scooter_path(scooter_rand) do %>
       <%= cl_image_tag(scooter_rand.image, class: "image") %>
       <div class="overlay">
         <div class="text">
@@ -53,6 +56,7 @@
           <h2 class="landingpage-cards-engine"><%= scooter_rand.engine %> </h2>
         </div>
       </div>
+      <% end %>
       <% end %>
     </div>
   <% end %>
