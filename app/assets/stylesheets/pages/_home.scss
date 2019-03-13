@@ -69,7 +69,7 @@
 .image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .overlay {
@@ -86,7 +86,7 @@
 }
 
 .contenitor:hover .overlay {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .text {
@@ -125,4 +125,26 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+.navbar-landingpage {
+  margin-top: -200px;
+}
+.landingpage-cards-brand {
+  font-family: $myfont;
+  font-size: 20px;
+  font-weight: lighter;
+  opacity: 0.7;
+  padding-bottom: 20px;
+}
+.landingpage-cards-model {
+  font-family: $myfont;
+  font-size: 30px;
+  font-weight: normal;
+  opacity: 0.9;
+}
+.landingpage-cards-engine {
+  font-family: $myfont;
+  font-size: 25px;
+  font-weight: normal;
+  opacity: 0.8;
 }

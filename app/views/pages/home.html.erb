@@ -1,5 +1,8 @@
 
 <div class="banner">
+  <div class="navbar-landingpage">
+    <%= render 'shared/navbar' %>
+  </div>
   <div class="container">
     <div class="info">
       <h1>Scooterent!</h1>
@@ -29,9 +32,9 @@
       <%= image_tag(scooter_rand.photo, class: "image") %>
         <div class="overlay">
           <div class="text">
-            <h2><%= scooter_rand.make %> </h2>
-            <h2><%= scooter_rand.model %> </h2>
-            <h2><%= scooter_rand.engine %> </h2>
+            <h2 class="landingpage-cards-brand"><%= scooter_rand.make %> </h2>
+            <h2 class="landingpage-cards-model"><%= scooter_rand.model %> </h2>
+            <h2 class="landingpage-cards-engine"><%= scooter_rand.engine %> </h2>
           </div>
         </div>
       </div>
