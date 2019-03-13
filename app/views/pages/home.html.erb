@@ -24,25 +24,25 @@
   <h3>Some Cool scooters to rent</h3>
 </div>
 
-  <div class="card-container col-md-12">
-<div class="row">
-      <% @scooters_rand.each do |scooter_rand| %>
+<div class="card-container col-md-12">
+  <div class="row">
+  <% @scooters_rand.each do |scooter_rand| %>
     <div class="col-md-4 contenitor">
       <% if scooter_rand.photo.present? %>
       <%= image_tag(scooter_rand.photo, class: "image") %>
-        <div class="overlay">
-          <div class="text">
-            <h2 class="landingpage-cards-brand"><%= scooter_rand.make %> </h2>
-            <h2 class="landingpage-cards-model"><%= scooter_rand.model %> </h2>
-            <h2 class="landingpage-cards-engine"><%= scooter_rand.engine %> </h2>
-          </div>
+      <div class="overlay">
+        <div class="text">
+          <h2 class="landingpage-cards-brand"><%= scooter_rand.make %> </h2>
+          <h2 class="landingpage-cards-model"><%= scooter_rand.model %> </h2>
+          <h2 class="landingpage-cards-engine"><%= scooter_rand.engine %> </h2>
         </div>
       </div>
       <% end %>
-      <% end %>
     </div>
+  <% end %>
   </div>
 </div>
+
 
 <div class="divider"></div>
   <div class="about-us">

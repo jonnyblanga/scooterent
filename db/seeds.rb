@@ -84,9 +84,7 @@ url << "https://images.unsplash.com/photo-1476419972179-ac981d01257e?ixlib=rb-1.
 url << "https://images.unsplash.com/photo-1542683088-abb3da334598?ixlib=rb-1.2.1&auto=format&fit=crop&w=1092&q=80"
 
 
-# puts 'Creating faker Scooters...'
 i = 0
-
 30.times do
   scooter = Scooter.create(
     make: Faker::Vehicle.make,
@@ -97,7 +95,10 @@ i = 0
     license_plate: Faker::Vehicle.license_plate,
     price: Faker::Commerce.price,
     engine: ["Disel", "Gasoline", "Eletrical", "gpl", "hybrid"].sample,
-    user: User.all.sample
+    user: User.all.sample,
+    address: Faker::Address.street_address
+    # latitude: Faker::Address.latitude,
+    # longitude: Faker::Address.longitude
   )
 i += 1
 end

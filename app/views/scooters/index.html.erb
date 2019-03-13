@@ -1,2 +1,28 @@
-<h1>Scooters#index</h1>
-<p>Find me in app/views/scooters/index.html.erb</p>
+
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
+<div class="card-container col-md-12">
+  <div class="row">
+  <% @scooters.each do |scooter| %>
+    <div class="col-md-4 contenitor">
+      <% if scooter.photo.present? %>
+      <%= image_tag(scooter.photo, class: "image") %>
+      <div class="overlay">
+        <div class="text">
+          <h2 class="landingpage-cards-brand"><%= scooter.make %> </h2>
+          <h2 class="landingpage-cards-model"><%= scooter.model %> </h2>
+          <h2 class="landingpage-cards-engine"><%= scooter.engine %> </h2>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
