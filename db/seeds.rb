@@ -53,7 +53,7 @@ puts 'Creating faker Scooters...'
 url = []
 url << "https://images.unsplash.com/photo-1520205162745-8fa521b40cb9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80"
 url << "https://images.unsplash.com/photo-1494851199343-9e626cbee310?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-url << "https://images.unsplash.com/photo-1516423485787-e433022a4801?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+url << "https://images.unsplash.com/photo-1508500869162-9a582155012f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
 url << "https://images.unsplash.com/photo-1495608312049-285ae516323d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
 url << "https://images.unsplash.com/photo-1527484885616-7f73af7fade2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
 url << "https://images.unsplash.com/photo-1520355256085-63034694ce01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
