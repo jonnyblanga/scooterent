@@ -1,7 +1,14 @@
 class ScootersController < ApplicationController
   before_action :find_scooter, only: [:show]
   def index
-    @scooter = Scooter.all
+    @scooters = Scooter.where.not(latitude: nil, longitude: nil)
+
+    @markers = @scooters.map do |scooter|
+      {
+        lng: scooter.longitude,
+        lat: scooter.latitude
+      }
+    end
   end
 
   def show

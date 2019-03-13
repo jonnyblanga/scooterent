@@ -4,8 +4,6 @@ class Scooter < ApplicationRecord
   has_many :users, through: :reservations
   has_many :reviews, through: :reservations
 
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
 
   def owner
     self.user
@@ -20,4 +18,6 @@ class Scooter < ApplicationRecord
 
   # mount_uploader :photo, PhotoUploader
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
