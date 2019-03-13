@@ -33,8 +33,8 @@ class ScootersController < ApplicationController
     end
   end
 
-
   private
+
   def scooter_params
     params.require(:scooter).permit(:make, :model, :year, :license_plate, :price, :engine, :description, :photo)
   end
