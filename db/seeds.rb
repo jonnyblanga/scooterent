@@ -86,12 +86,11 @@ url << "https://images.unsplash.com/photo-1542683088-abb3da334598?ixlib=rb-1.2.1
 
 i = 0
 30.times do
-  scooter = Scooter.create(
+  scooter = Scooter.new(
     make: Faker::Vehicle.make,
     model: Faker::Vehicle.model,
     year: Faker::Vehicle.year,
     description: Faker::Lorem.paragraph,
-    photo: url[i],
     license_plate: Faker::Vehicle.license_plate,
     price: Faker::Commerce.price,
     engine: ["Disel", "Gasoline", "Eletrical", "gpl", "hybrid"].sample,
@@ -100,6 +99,8 @@ i = 0
     # latitude: Faker::Address.latitude,
     # longitude: Faker::Address.longitude
   )
+  scooter.remote_image_url = url[i]
+  scooter.save
 i += 1
 end
 

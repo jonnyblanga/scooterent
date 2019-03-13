@@ -12,8 +12,8 @@
   <div class="row">
   <% @scooters.each do |scooter| %>
     <div class="col-md-4 contenitor">
-      <% if scooter.photo.present? %>
-      <%= image_tag(scooter.photo, class: "image") %>
+      <% if scooter.image.present? %>
+      <%= cl_image_tag(scooter.image, class: "image") %>
       <div class="overlay">
         <div class="text">
           <h2 class="landingpage-cards-brand"><%= scooter.make %> </h2>
