@@ -24,6 +24,15 @@ User.destroy_all
 
 puts 'Creating fake User...'
 
+admin = User.create(
+  name: "admin",
+  birthday: Faker::Date.birthday(18, 65),
+  address: "corso magenta 52, Milano, Italy",
+  license_photo: Faker::Avatar,
+  email: "admin@gmail.com",
+  password: "123456"
+)
+
 
 15.times do
   user = User.create(
