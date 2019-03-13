@@ -2,6 +2,11 @@
 <p>Find me in app/views/scooters/show.html.erb</p> -->
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @scooter.photo %>);">
+  <div class="edit-button">
+    <%= link_to edit_scooter_path(@scooter) do %>
+      <button type="button" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i>Edit this scooter</button>
+    <% end %>
+  </div>
 </div>
 
 <div class="show-container">
@@ -9,5 +14,9 @@
   <%= render partial: "partials/all_info", locals: {scooter: @scooter} %>
 
   <%= render partial: "partials/cost_form", locals: {reservation: @reservation, scooter: @scooter} %>
+
+</div>
+
+<div class="scooter-show-map">
 
 </div>
