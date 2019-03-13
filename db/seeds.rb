@@ -50,19 +50,22 @@ url << "https://images.unsplash.com/photo-1495608312049-285ae516323d?ixlib=rb-1.
 
 puts 'Creating faker Scooters...'
 
-  30.times do
-    scooter = Scooter.create(
-      make: Faker::Vehicle.make,
-      model: Faker::Vehicle.model,
-      year: Faker::Vehicle.year,
-      description: Faker::Lorem.paragraph,
-      photo: url.sample,
-      license_plate: Faker::Vehicle.license_plate,
-      price: Faker::Commerce.price,
-      engine: ["Disel", "Gasoline", "Eletrical", "gpl", "hybrid"].sample,
-      user: User.all.sample
-   )
-  end
+30.times do
+  scooter = Scooter.create(
+    make: Faker::Vehicle.make,
+    model: Faker::Vehicle.model,
+    year: Faker::Vehicle.year,
+    description: Faker::Lorem.paragraph,
+    photo: url.sample,
+    license_plate: Faker::Vehicle.license_plate,
+    price: Faker::Commerce.price,
+    engine: ["Disel", "Gasoline", "Eletrical", "gpl", "hybrid"].sample,
+    user: User.all.sample,
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude
+  )
+end
+
 puts "Finished the Scooters! #{Scooter.all.count}"
 
 puts 'Creating faker Reservations...'
