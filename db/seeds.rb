@@ -61,8 +61,9 @@ puts 'Creating faker Scooters...'
     price: Faker::Commerce.price,
     engine: ["Disel", "Gasoline", "Eletrical", "gpl", "hybrid"].sample,
     user: User.all.sample,
-    latitude: Faker::Address.latitude,
-    longitude: Faker::Address.longitude
+    address: Faker::Address.street_address
+    # latitude: Faker::Address.latitude,
+    # longitude: Faker::Address.longitude
   )
 end
 
