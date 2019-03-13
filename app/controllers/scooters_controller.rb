@@ -1,17 +1,15 @@
 class ScootersController < ApplicationController
-  before_action :find_scooter, only: [:show]
+  before_action :find_scooter, only: [:show, :edit, :update]
   def index
     @scooter = Scooter.all
   end
 
   def show
-    @scooter
     @reservation = Reservation.new
   end
 
   def new
     @scooter = Scooter.new
-    @reservation = Reservation.new
   end
 
   def create
@@ -24,6 +22,19 @@ class ScootersController < ApplicationController
     end
   end
 
+  def edit
+    @scooter
+  end
+
+  def update
+    @scooter.update(scooter_params)
+    redirect_to scooter_path(@scooter)
+  end
+
+  def destroy
+    @scooter.destroy
+    redirect_to scooters_path
+  end
 
   private
   def scooter_params
