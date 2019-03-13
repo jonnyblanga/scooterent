@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2019_03_13_120938) do
   enable_extension "plpgsql"
 
   create_table "reservations", force: :cascade do |t|
-    t.date "start_date"
-    t.date "end_date"
+    t.string "start_date"
+    t.string "end_date"
     t.bigint "scooter_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_120938) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.date "birthday"
+    t.string "birthday"
     t.string "address"
     t.string "license_photo"
     t.index ["email"], name: "index_users_on_email", unique: true
