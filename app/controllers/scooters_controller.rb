@@ -1,17 +1,24 @@
 class ScootersController < ApplicationController
-  before_action :find_scooter, only: [:show]
+  before_action :find_scooter, only: [:show, :edit, :update]
   def index
-    @scooter = Scooter.all
+    @scooters = Scooter.where.not(latitude: nil, longitude: nil)
+
+    @markers = @scooters.map do |scooter|
+      {
+        lng: scooter.longitude,
+        lat: scooter.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { scooter: scooter })
+        #image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }
+    end
   end
 
   def show
-    @scooter
     @reservation = Reservation.new
   end
 
   def new
     @scooter = Scooter.new
-    @reservation = Reservation.new
   end
 
   def create
@@ -24,8 +31,22 @@ class ScootersController < ApplicationController
     end
   end
 
+  def edit
+    @scooter
+  end
+
+  def update
+    @scooter.update(scooter_params)
+    redirect_to scooter_path(@scooter)
+  end
+
+  def destroy
+    @scooter.destroy
+    redirect_to scooters_path
+  end
 
   private
+
   def scooter_params
     params.require(:scooter).permit(:make, :model, :year, :license_plate, :price, :engine, :description, :photo)
   end

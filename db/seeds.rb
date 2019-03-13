@@ -84,21 +84,23 @@ url << "https://images.unsplash.com/photo-1476419972179-ac981d01257e?ixlib=rb-1.
 url << "https://images.unsplash.com/photo-1542683088-abb3da334598?ixlib=rb-1.2.1&auto=format&fit=crop&w=1092&q=80"
 
 
-# puts 'Creating faker Scooters...'
 i = 0
-
 30.times do
-  scooter = Scooter.create(
+  scooter = Scooter.new(
     make: Faker::Vehicle.make,
     model: Faker::Vehicle.model,
     year: Faker::Vehicle.year,
     description: Faker::Lorem.paragraph,
-    photo: url[i],
     license_plate: Faker::Vehicle.license_plate,
     price: Faker::Commerce.price,
     engine: ["Disel", "Gasoline", "Eletrical", "gpl", "hybrid"].sample,
-    user: User.all.sample
+    user: User.all.sample,
+    address: Faker::Address.street_address
+    # latitude: Faker::Address.latitude,
+    # longitude: Faker::Address.longitude
   )
+  scooter.remote_image_url = url[i]
+  scooter.save
 i += 1
 end
 
@@ -108,8 +110,8 @@ puts 'Creating faker Reservations...'
 
 15.times do
   reservation = Reservation.create(
-    start_date: Faker::Date.between(Date.today, 10.days.from_now ),
-    end_date: Faker::Date.between(20.days.from_now, 30.days.from_now ),
+    start_date: (Faker::Date.between(Date.today, 10.days.from_now )).to_s,
+    end_date: (Faker::Date.between(20.days.from_now, 30.days.from_now )).to_s,
     user: User.all.sample,
     scooter: Scooter.all.sample
   )
