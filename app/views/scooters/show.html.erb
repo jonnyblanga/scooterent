@@ -1,7 +1,7 @@
 <!-- <h1>Scooters#show</h1>
 <p>Find me in app/views/scooters/show.html.erb</p> -->
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @scooter.photo %>);">
+<div class="banner show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @scooter.image %>);">
   <div class="edit-button">
     <%= link_to edit_scooter_path(@scooter) do %>
       <button type="button" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i>Edit this scooter</button>
