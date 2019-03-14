@@ -18,9 +18,10 @@
 
     <div class="owner-details">
       <h5>OWNER DETAILS</h5>
-      <p>Owner name: <%= @reservation.scooter.user.name %></p>
-      <p>Owner email: <%= @reservation.scooter.user.email %></p>
-      <p>Owner Address: <%= @reservation.scooter.user.address %></p>
+      <ul>
+      <li><p>Owner name: <%= @reservation.scooter.user.name.capitalize %></p></li>
+      <li><p>Owner email: <%= @reservation.scooter.user.email %></p></li>
+      <li><p>Owner address: <%= @reservation.scooter.user.address %></p></li>
     </div>
 
   </div>

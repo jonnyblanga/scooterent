@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @scooter #= Scooter.find(params[:id])
+    @scooter
     @reservation = Reservation.find(params[:id])
   end
 
