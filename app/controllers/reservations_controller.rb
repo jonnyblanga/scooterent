@@ -1,8 +1,12 @@
 class ReservationsController < ApplicationController
   def create
+    start_date = params["reservation"]["start_date"].split("to").first.strip
+    end_date = params["reservation"]["start_date"].split("to").last.strip
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     @reservation.scooter = Scooter.find(params[:scooter_id])
+    @reservation.start_date = start_date
+    @reservation.end_date = end_date
     if @reservation.save!
       redirect_to reservation_path(@reservation)
     end
@@ -12,8 +16,8 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @scooter
-    @reservation
+    @scooter #= Scooter.find(params[:id])
+    @reservation = Reservation.find(params[:id])
   end
 
   def edit
