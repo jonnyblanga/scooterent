@@ -1,10 +1,17 @@
-
-<div>
-  <%= render 'shared/tab' %>
-</div>
+<ul class="list-inline tabs-underlined">
+  <li>
+    <%= link_to "My profile", pages_user_page_path, class: "tab-underlined"%>
+  </li>
+  <li>
+    <%= link_to "My Bookings", pages_user_page2_path, class: "tab-underlined"%>
+  </li>
+  <li>
+    <%= link_to "My Scooters", pages_user_page3_path, class: "tab-underlined active"%>
+  </li>
+</ul>
 
 <div class="card-bnt">
-  <button id="btn-gradient"><%= link_to "Load a new scooter",  new_scooter_path %></button>
+  <button id="btn-new-scooter"><%= link_to "Load a new scooter",  new_scooter_path %></button>
 </div>
 <% @scooters.each do |scooter| %>
 <div class="card-center">
