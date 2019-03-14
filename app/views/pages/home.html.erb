@@ -7,9 +7,34 @@
     <div class="info">
       <h1>ScooteRent!</h1>
       <p>Way better than a rental company</p>
-      <%= link_to scooters_path do %>
-      <button class="btn btn-success" >Filter!</button>
-      <% end  %>
+      <input type="search" id="address" class="form-control" placeholder="Where are we going?" />
+
+      <p>Selected: <strong id="address-value">none</strong></p>
+      <%= link_to "Search cool scooters", scooters_path, {class: "btn btn-primary"} %>
+
+      <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
+
+
+      <script>
+      (function() {
+        var placesAutocomplete = places({
+          appId: "plT0NXOSH8ZG",
+          apiKey: "80c89418114818b54c6a6acfbb3971bf",
+          container: document.querySelector('#address')
+        });
+
+        var $address = document.querySelector('#address-value')
+        placesAutocomplete.on('change', function(e) {
+          $address.textContent = e.suggestion.value
+        });
+
+        placesAutocomplete.on('clear', function() {
+          $address.textContent = 'none';
+        });
+
+      })();
+      </script>
+
     </div>
   </div>
 </div>
@@ -39,7 +64,7 @@
 <div class="divider"></div>
 
 <div class="our-offers">
-  <h3>Some Cool scooters to rent</h3>
+  <h3>Some cool scooters to rent</h3>
 </div>
 
 <div class="card-container col-md-12">

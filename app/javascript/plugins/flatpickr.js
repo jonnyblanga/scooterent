@@ -7,6 +7,8 @@ const dataBookings = document.querySelector(".banner.show-banner");
 
 if (dataBookings) {
 
+if (dataBookings) {
+
 flatpickr("#start_date", {
   altInput: true,
   "plugins": [new rangePlugin({ input: "#end_date"})],
