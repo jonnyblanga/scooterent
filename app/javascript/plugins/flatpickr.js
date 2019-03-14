@@ -5,6 +5,7 @@ import rangePlugin from 'flatpickr/dist/plugins/rangePlugin'
 const dataBookings = document.querySelector(".banner.show-banner");
 
 
+if (dataBookings) {
 
 if (dataBookings) {
 
