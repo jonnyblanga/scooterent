@@ -9,4 +9,5 @@ class Reservation < ApplicationRecord
   # def not_owner?
   #   :scooter.user != :user
   # end
+
 end
