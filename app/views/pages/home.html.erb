@@ -7,11 +7,14 @@
     <div class="info">
       <h1>ScooteRent!</h1>
       <p>Way better than a rental company</p>
-      <input type="search" id="address" class="form-control" placeholder="Where are we going?" />
+
+      <form action="/scooters" method="get">
+      <input type="search" id="address" class="form-control" placeholder="Where are we going?" name="query" />
 
       <p>Selected: <strong id="address-value">none</strong></p>
-      <%= link_to "Search cool scooters", scooters_path, {class: "btn btn-primary"} %>
-
+      <!-- <#%= link_to "Search cool scooters", scooters_path, {class: "btn btn-primary"} %> -->
+      <button type="submit" class="btn-warning"><i class="fa fa-search"></i>
+      </form>
       <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
 
 

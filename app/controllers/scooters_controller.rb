@@ -1,8 +1,8 @@
 class ScootersController < ApplicationController
   before_action :find_scooter, only: [:show, :edit, :update]
-  # before_action :scooter_params
-
+  # before_action :query_params
   def index
+    @query = params[:query]
     @scooters = Scooter.where.not(latitude: nil, longitude: nil)
 
     @markers = @scooters.map do |scooter|
@@ -56,11 +56,14 @@ class ScootersController < ApplicationController
 
   private
   def scooter_params
-    # params.require(:potato).permit
     params.require(:scooter).permit(:make, :model, :year, :license_plate, :price, :engine, :description, :photo)
   end
 
   def find_scooter
     @scooter = Scooter.find(params[:id])
   end
+
+  # def query_params
+  #   params.require(:query).permit
+  # end
 end
