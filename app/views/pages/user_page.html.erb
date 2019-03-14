@@ -1,6 +1,15 @@
-<div>
-  <%= render 'shared/tab' %>
-</div>
+<ul class="list-inline tabs-underlined">
+  <li>
+    <%= link_to "My profile", pages_user_page_path, class: "tab-underlined active"%>
+  </li>
+  <li>
+    <%= link_to "My Bookings", pages_user_page2_path, class: "tab-underlined"%>
+  </li>
+  <li>
+    <%= link_to "My Scooters", pages_user_page3_path, class: "tab-underlined"%>
+  </li>
+</ul>
+
 
 <div class="card-center">
   <div class="all-info">

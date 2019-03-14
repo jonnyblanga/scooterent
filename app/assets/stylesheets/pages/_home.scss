@@ -21,6 +21,18 @@ body {
   }
 }
 
+.search-input{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#address{
+  width: 350px;
+  flex: 0 0 auto;
+}
+
+
 .info {
   padding-top: 50px;
 }

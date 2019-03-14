@@ -12,7 +12,7 @@
   color:gray;
 }
 
-#btn-gradient {
+#btn-new-scooter {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
@@ -22,7 +22,28 @@
   border: 1px solid #0F60C4;
 }
 
-#btn-gradient:hover {
+#btn-new-scooter:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+.btn-home{
+  padding: 15px;
+  background-color: white;
+  color: gray;
+  margin-left: 10px;
+  border-radius: 3px;
+  box-shadow: 0 3px 10px black;
+ &:hover {
+    color: black;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 5px 15px black;
+  }
+}
+
+.btn-search {
+  height: 38px;
+  width: 38px;
+  border-radius: 3px;
 }

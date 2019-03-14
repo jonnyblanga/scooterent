@@ -35,18 +35,5 @@ body {
   box-shadow: 0 5px 15px black;
 }
 
-.home-button{
-  padding: 15px;
-  background-color: white;
-  color: gray;
-  margin-left: 10px;
-  border-radius: 3px;
-  box-shadow: 0 3px 10px black;
- &:hover {
-    color: black;
-    text-decoration: none;
-    border-radius: 3px;
-    box-shadow: 0 5px 15px black;
-  }
-}
+
 
