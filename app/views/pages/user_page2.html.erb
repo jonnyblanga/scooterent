@@ -23,6 +23,9 @@
       <p>Contact owner at:</p>
       <p><strong><%= reservation.scooter.user.email%></strong></p>
     </div>
+    <div class="card-bnt">
+      <button id="btn-gradient"><%= link_to "Delete", reservation_path(reservation.id), method: :delete %></button>
+    </div>
   </div>
 </div>
 

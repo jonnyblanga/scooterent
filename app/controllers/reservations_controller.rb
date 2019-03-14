@@ -28,8 +28,12 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation = Reservation.find(params[:id])
+    review_linked = Review.where(reservation: @reservation)
+    if review_linked
+      review_linked.destroy_all
+    end
     @reservation.destroy
-    redirect_to reservations_path
+    redirect_to  pages_user_page2_path
   end
 
   private
@@ -38,5 +42,4 @@ class ReservationsController < ApplicationController
     params.require(:scooter_id)
     params.require(:reservation).permit(:start_date, :end_date)
   end
-
 end

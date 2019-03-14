@@ -128,7 +128,7 @@ puts "Finished the Reservations! #{Reservation.all.count}"
 
 
 puts 'Creating faker Reviews...'
-50.times do
+5.times do
   review = Review.create(
     comment: Faker::Lorem.paragraph,
     rating: Faker::Number.between(1, 5),
