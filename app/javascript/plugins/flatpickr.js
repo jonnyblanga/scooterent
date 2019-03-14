@@ -23,5 +23,4 @@ flatpickr("#start_date", {
   maxDate: new Date().fp_incr(60)
 });
 
-}
-end;
+};
