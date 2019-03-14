@@ -114,13 +114,18 @@ puts "Finished the Scooters! #{Scooter.all.count}"
 
 puts 'Creating faker Reservations...'
 
-15.times do
+
+dates = ["2019-03-14", "2019-03-15", "2019-03-16", "2019-03-17", "2019-03-20", "2019-03-25", "2019-03-30", "2019-04-03",  "2019-04-10",  "2019-04-14", "2019-04-16", "2019-04-20", "2019-04-29", "2019-05-02"]
+
+n = 0
+13.times do
   reservation = Reservation.create(
-    start_date: (Faker::Date.between(Date.today, 10.days.from_now )).to_s,
-    end_date: (Faker::Date.between(20.days.from_now, 30.days.from_now )).to_s,
+    start_date: dates[n],
+    end_date: dates[n+1],
     user: User.all.sample,
     scooter: Scooter.all.sample
   )
+  n+=1
 end
 
 puts "Finished the Reservations! #{Reservation.all.count}"

@@ -1,5 +1,7 @@
 class ScootersController < ApplicationController
   before_action :find_scooter, only: [:show, :edit, :update]
+  # before_action :scooter_params
+
   def index
     @scooters = Scooter.where.not(latitude: nil, longitude: nil)
 
@@ -15,6 +17,13 @@ class ScootersController < ApplicationController
 
   def show
     @reservation = Reservation.new
+
+    @reservations = @scooter.reservations
+    @availability_array = []
+    @reservations.each do |reservation|
+      @availability_array << {from: reservation.start_date, to: reservation.end_date}
+    end
+    @availability_array
   end
 
   def new
@@ -46,8 +55,8 @@ class ScootersController < ApplicationController
   end
 
   private
-
   def scooter_params
+    # params.require(:potato).permit
     params.require(:scooter).permit(:make, :model, :year, :license_plate, :price, :engine, :description, :photo)
   end
 

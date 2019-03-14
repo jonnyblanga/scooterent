@@ -1,5 +1,47 @@
-<!-- <h1>Reservations#show</h1>
-<p>Find me in app/views/reservations/show.html.erb</p>
- -->
+<div class="confirtmation-page">
 
-<h1>Reservation Confirmation</h1>
+  <div class="confirmation-message">
+    <h1>Congratulations! Your reservation has been confirmed.</h1>
+  </div>
+
+  <div class="reservation-info">
+    <div class="reservation-details">
+      <h5>RESERVATION DETAILS</h5>
+      <ul>
+        <li><p>Make: <%= @reservation.scooter.make %></p></li>
+      <li><p>Model: <%= @reservation.scooter.model %></p></li>
+      <li>Start date: <%= @reservation.start_date %></p></li>
+      <li>End date: <%= @reservation.end_date %></p></li>
+      <li>Price per day: <%= "#{@reservation.scooter.price} $" %></p></li>
+    </ul>
+    </div>
+
+    <div class="owner-details">
+      <h5>OWNER DETAILS</h5>
+      <ul>
+      <li><p>Owner name: <%= @reservation.scooter.user.name.capitalize %></p></li>
+      <li><p>Owner email: <%= @reservation.scooter.user.email %></p></li>
+      <li><p>Owner address: <%= @reservation.scooter.user.address %></p></li>
+    </div>
+
+  </div>
+
+
+
+    <a href="..." class="home-button">View all bookings</a>
+
+
+</div>
+
+<div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+    </div>
+  </div>
