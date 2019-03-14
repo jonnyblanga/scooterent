@@ -12,9 +12,11 @@
       <li><p>Model: <%= @reservation.scooter.model %></p></li>
       <li>Start date: <%= @reservation.start_date %></p></li>
       <li>End date: <%= @reservation.end_date %></p></li>
-      <li>Price per day: <%= "#{@reservation.scooter.price} $" %></p></li>
+      <li>Price per day: <%= "$#{@reservation.scooter.price}" %></p></li>
     </ul>
+    <h6>Total: <%= "$#{((Date.parse(@reservation.end_date) - Date.parse(@reservation.start_date)).to_i + 1) * @reservation.scooter.price}" %></h6>
     </div>
+
 
     <div class="owner-details">
       <h5>OWNER DETAILS</h5>
@@ -24,8 +26,6 @@
     </div>
 
   </div>
-
-
 
     <a href="..." class="home-button">View all bookings</a>
 
