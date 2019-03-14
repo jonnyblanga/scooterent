@@ -1,0 +1,21 @@
+
+<% @scooters.each do |scooter| %>
+<div class="card-center">
+  <div class="card-product">
+    <% if scooter.image %>
+      <%= cl_image_tag(scooter.image, class: "license") %>
+    <% else %>
+      <i class="fas fa-motorcycle"></i>
+    <% end %>
+    <div class="card-product-infos">
+      <h2><%= scooter.model%> - <%= scooter.make%> (<%= scooter.year%>)</h2>
+      <p> (<%= scooter.address%> )</p>
+      <p><%= scooter.description%></p>
+      <p><i class="fas fa-burn"></i> <%= scooter.engine%> - <i class="fas fa-euro-sign"></i> <%= scooter.price%> </p>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+

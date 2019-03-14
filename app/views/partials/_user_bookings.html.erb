@@ -1,0 +1,25 @@
+
+<% @reservations.each do |reservation| %>
+<div class="card-center">
+  <div class="card-product">
+    <% if reservation.scooter.image %>
+      <%= cl_image_tag(reservation.scooter.image, class: "license") %>
+    <% else %>
+      <i class="fas fa-motorcycle"></i>
+    <% end %>
+    <div class="card-product-infos">
+      <h2><%= reservation.scooter.model%> - <%= reservation.scooter.make%> (<%= reservation.scooter.year%>)</h2>
+      <p> (<%= reservation.scooter.address%> )</p>
+      <p><%= reservation.scooter.description%></p>
+      <p><i class="fas fa-burn"></i> <%= reservation.scooter.engine%> - <i class="fas fa-euro-sign"></i> <%= reservation.scooter.price%> </p>
+    </div>
+    <div class="card-reservation">
+      <p>Start date:<strong> <%= reservation.start_date%></strong> </p>
+      <p>End date:<strong> <%= reservation.end_date%></strong> </p>
+      <p>Contact owner at:</p>
+      <p><strong><%= reservation.scooter.user.email%></strong></p>
+    </div>
+  </div>
+</div>
+
+<% end %>

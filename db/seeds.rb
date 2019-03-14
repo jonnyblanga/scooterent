@@ -24,26 +24,32 @@ User.destroy_all
 
 puts 'Creating fake User...'
 
-admin = User.create(
+admin = User.new(
   name: "admin",
   birthday: Faker::Date.birthday(18, 65),
   address: "corso magenta 52, Milano, Italy",
-  license_photo: Faker::Avatar,
+  profile_pic: Faker::Avatar,
+  license_photo: "https://www.mass.gov/files/styles/embedded_full_width/public/ma_drivers_license_6.jpg?itok=qY94oaB5",
   email: "admin@gmail.com",
   password: "123456"
 )
+admin.remote_profile_pic_url = Faker::Avatar.image
+admin.remote_license_photo_url = "https://www.mass.gov/files/styles/embedded_full_width/public/ma_drivers_license_6.jpg?itok=qY94oaB5"
+admin.save
+
 
 
 15.times do
-  user = User.create(
+  user = User.new(
     name: Faker::Name.first_name,
     birthday: Faker::Date.birthday(18, 65),
     address: Faker::Address.street_address,
-    license_photo: Faker::Avatar.image,
     email: Faker::Internet.email,
     password: Faker::Internet.password
   )
-
+  user.remote_profile_pic_url = Faker::Avatar.image
+  user.remote_license_photo_url = "https://www.mass.gov/files/styles/embedded_full_width/public/ma_drivers_license_6.jpg?itok=qY94oaB5"
+  user.save
 end
 
 puts "Finished the Users! #{User.all.count}"

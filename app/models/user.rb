@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates :birthday, :presence => true
+  mount_uploader :profile_pic, PhotoUploader
+  mount_uploader :license_photo, PhotoUploader
 end
