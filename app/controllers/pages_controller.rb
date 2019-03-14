@@ -10,4 +10,17 @@ class PagesController < ApplicationController
     @scooters = Scooter.where(user: @user)
     @reservations = Reservation.where(user: @user)
   end
+
+  def user_page2
+    @user = current_user
+    @scooters = Scooter.where(user: @user)
+    @reservations = Reservation.where(user: @user)
+  end
+
+  def user_page3
+    @user = current_user
+    @scooters = Scooter.where(user: @user)
+    @reservations = Reservation.where(user: @user)
+  end
+
 end
