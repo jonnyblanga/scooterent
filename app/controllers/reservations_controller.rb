@@ -36,7 +36,7 @@ class ReservationsController < ApplicationController
       review_linked.destroy_all
     end
     @reservation.destroy
-    redirect_to  pages_user_page2_path
+    redirect_to pages_user_page2_path
   end
 
   private

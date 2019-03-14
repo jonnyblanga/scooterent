@@ -24,7 +24,7 @@
       <p><strong><%= reservation.scooter.user.email%></strong></p>
     </div>
     <div class="card-bnt">
-      <button id="btn-gradient"><%= link_to "Delete", reservation_path(reservation.id), method: :delete %></button>
+      <button id="btn-gradient"><%= link_to "Delete", scooter_reservation_path(reservation.scooter, reservation), method: :delete %></button>
     </div>
   </div>
 </div>
