@@ -1,12 +1,21 @@
 .form-page {
-  margin-left: 400px;
-  margin-right: 400px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  width: 50vw;
   padding: 50px;
-  background: rgba(253, 193, 18, 0.8);
+  background: rgba(253, 193, 18, 1);
+  margin: 0 auto;
   border-radius: 5px;
-  -webkit-box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.31);
-  -moz-box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.31);
-  box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.31);
+  -webkit-box-shadow: 0px 0px 9px 5px rgba(253, 193, 18, 0.2);
+  -moz-box-shadow: 0px 0px 9px 5px rgba(253, 193, 18, 0.2);
+  box-shadow: 0px 0px 9px 5px rgba(253, 193, 18, 0.2);
+
+  h2 {
+    color: #F6FFBA;
+  }
+}
+
+.form-page a {
+  color: #e8e2db;
+  &:hover {
+    color: black;
+  }
 }
