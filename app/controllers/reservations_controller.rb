@@ -8,11 +8,12 @@ class ReservationsController < ApplicationController
     @reservation.start_date = start_date
     @reservation.end_date = end_date
     if @reservation.save!
-      redirect_to reservation_path(@reservation)
+      redirect_to scooter_reservation_path(@reservation.scooter, @reservation)
     end
   end
 
   def index
+    Reservation.where(user: current_user)
   end
 
   def show
@@ -20,24 +21,13 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
-  def edit
-    @reservation = Reservation.find(params[:id])
-  end
-
-  def update
-    @reservation = Reservation.find(params[:id])
-    @reservation.update(reservation_params)
-    redirect_to reservations_path
-  end
-
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    redirect_to reservations_path
+    redirect_to scooter_reservations_path
   end
 
   private
-
   def reservation_params
     params.require(:scooter_id)
     params.require(:reservation).permit(:start_date, :end_date)

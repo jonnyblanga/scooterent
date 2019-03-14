@@ -1,6 +1,6 @@
 <div class="cost-form">
   <h1>$<%= scooter.price %> per day</h1>
-  <%= simple_form_for reservation do |f| %>
+  <%= simple_form_for [scooter, reservation], method: "get" do |f| %>
       <%= f.input :start_date, as: :string, input_html: { id: "start_date" } %>
       <%= f.input :end_date, as: :string, input_html: { id: "end_date" }%>
       <%= hidden_field_tag(:scooter_id, @scooter.id) %>
