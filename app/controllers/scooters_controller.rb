@@ -3,7 +3,11 @@ class ScootersController < ApplicationController
   # before_action :query_params
   def index
     @query = params[:query]
-    @scooters = Scooter.where.not(latitude: nil, longitude: nil)
+    if @query.empty?
+      @scooters = Scooter.where.not(latitude: nil, longitude: nil)
+    else
+      @scooters = Scooter.near(@query, 1000) if @query
+    end
 
     @markers = @scooters.map do |scooter|
       {
@@ -16,7 +20,17 @@ class ScootersController < ApplicationController
   end
 
   def show
+
     @reviews = Review.where(reservation: Reservation.where(scooter: @scooter)).all
+
+    @markers = [
+        {
+        lng: @scooter.longitude,
+        lat: @scooter.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { scooter: @scooter })
+        #image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+        }]
+
     @reservation = Reservation.new
 
     @reservations = @scooter.reservations

@@ -3,12 +3,28 @@
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
   font-family: 'Open Sans', sans-serif;
+  padding: 0 !important;
+  border-radius: 3px !important;
+  overflow: hidden;
 }
 
 #map{
   padding-bottom: 20px;
   margin-bottom: 20px;
-
 }
+
+.mapboxgl-popup-close-button {
+  color: white;
+}
+
+.scooter-info{
+  display: flex;
+  margin-top: 0;
+  justify-content: space-between;
+}
+
+#scooter-brand > h5 {
+  font-weight: 200;
+}
+
