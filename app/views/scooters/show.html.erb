@@ -24,5 +24,18 @@
 
 </div>
 
+<h2>
+  <%="Reviews" %>
+</h2>
 
-
+<div class="card-product" id="reviews">
+  <div id="reviews">
+    <% if @reviews.blank? %>
+      Be the first to leave a review for <%= @scooter.make %> <%= @scooter.model %>
+    <% else %>
+      <% @reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -38,8 +38,13 @@
     <div class="card-bnt">
       <button id="btn-gradient"><%= link_to "Delete", scooter_reservation_path(reservation.scooter, reservation), method: :delete %></button>
     </div>
+    <div class="card-bnt">
+      <button id="btn-gradient"><%= link_to "Review", new_scooter_reservation_review_path(reservation.scooter, reservation)%></button>
+    </div>
   </div>
 </div>
+
+
 
 <% end %>
 

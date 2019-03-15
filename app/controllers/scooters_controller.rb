@@ -20,6 +20,9 @@ class ScootersController < ApplicationController
   end
 
   def show
+
+    @reviews = Review.where(reservation: Reservation.where(scooter: @scooter)).all
+
     @markers = [
         {
         lng: @scooter.longitude,
@@ -27,6 +30,7 @@ class ScootersController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { scooter: @scooter })
         #image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
         }]
+
     @reservation = Reservation.new
 
     @reservations = @scooter.reservations
@@ -52,7 +56,6 @@ class ScootersController < ApplicationController
   end
 
   def edit
-    @scooter
   end
 
   def update
