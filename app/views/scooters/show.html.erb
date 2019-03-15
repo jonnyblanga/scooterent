@@ -3,14 +3,16 @@
 
 <div data-dates="<%= @availability_array.to_json %>"class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= @scooter.image %>);">
 
-  <div class="edit-button">
-    <%= link_to edit_scooter_path(@scooter) do %>
+<!--   <div class="edit-button">
+    <%#= link_to edit_scooter_path(@scooter) do %>
       <button type="button" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i>Edit this scooter</button>
-    <% end %>
-  </div>
+    <% #end %>
+  </div> -->
 </div>
 
 <div class="show-container">
+
+  <%= render partial: "partials/map_show", locals: {scooter: @scooter} %>
 
   <%= render partial: "partials/all_info", locals: {scooter: @scooter} %>
 
@@ -22,5 +24,18 @@
 
 </div>
 
+<h2>
+  <%="Reviews" %>
+</h2>
 
-
+<div class="card-product" id="reviews">
+  <div id="reviews">
+    <% if @reviews.blank? %>
+      Be the first to leave a review for <%= @scooter.make %> <%= @scooter.model %>
+    <% else %>
+      <% @reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

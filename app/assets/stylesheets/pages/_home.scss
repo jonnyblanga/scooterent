@@ -101,6 +101,7 @@ body {
 .contenitor {
   position: relative;
   width: 50%;
+  margin-bottom: 22px;
 }
 
 .image {
@@ -168,20 +169,20 @@ body {
 }
 .landingpage-cards-brand {
   font-family: $myfont;
-  font-size: 20px;
-  font-weight: lighter;
+  font-size: 25px;
+  font-weight: normal;
   opacity: 0.7;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 .landingpage-cards-model {
   font-family: $myfont;
-  font-size: 30px;
-  font-weight: normal;
+  font-size: 20px;
+  font-weight: linear-gradient;
   opacity: 0.9;
 }
-.landingpage-cards-engine {
+.landingpage-cards-price {
   font-family: $myfont;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: normal;
   opacity: 0.8;
 }

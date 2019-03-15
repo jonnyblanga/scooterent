@@ -1,0 +1,8 @@
+<div class="form-page">
+  <h1>Review</h1>
+  <%= simple_form_for [@scooter, @reservation, @review] do |f| %>
+    <%= f.text_field :comment %>
+    <%= f.input :rating, collection: [1,2,3,4,5] %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

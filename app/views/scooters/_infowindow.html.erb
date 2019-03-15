@@ -1,2 +1,17 @@
+<div class="card-scooter-map">
+  <%= cl_image_tag(scooter.image, class: "image-min") %>
 
-<%= cl_image_tag(scooter.image, class: "image-min") %>
+  <div class="scooter-info">
+
+    <div id="scooter-brand">
+      <h4><%= scooter.make %></h4>
+      <h5><%= scooter.model %></h5>
+    </div>
+
+    <div id="scooter-price">
+      <h4><%= "$#{scooter.price}" %></h4>
+    </div>
+
+  </div>
+
+</div>
