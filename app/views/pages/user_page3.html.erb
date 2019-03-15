@@ -14,7 +14,7 @@
 </ul>
 
 <div class="card-bnt">
-  <button id="btn-new-scooter"><%= link_to "Load a new scooter",  new_scooter_path %></button>
+  <button id="btn-gradient"><%= link_to "Load a new scooter",  new_scooter_path %></button>
 </div>
 <% @scooters.each do |scooter| %>
 <div class="card-center">
@@ -32,6 +32,9 @@
     </div>
     <div class="card-bnt">
       <button id="btn-gradient"><%= link_to "Edit", edit_scooter_path(scooter.id)%></button>
+    </div>
+    <div class="card-bnt">
+      <button id="btn-gradient"><%= link_to "Delete", scooter_path(scooter), method: :delete %></button>
     </div>
   </div>
 </div>

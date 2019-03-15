@@ -1,5 +1,5 @@
 class ScootersController < ApplicationController
-  before_action :find_scooter, only: [:show, :edit, :update]
+  before_action :find_scooter, only: [:show, :edit, :update, :destroy]
   # before_action :query_params
   def index
     @query = params[:query]
@@ -52,7 +52,7 @@ class ScootersController < ApplicationController
 
   def destroy
     @scooter.destroy
-    redirect_to scooters_path
+    redirect_to pages_user_page3_path
   end
 
   private
