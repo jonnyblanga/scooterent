@@ -10,10 +10,10 @@
     <%= f.input :year %>
     <%= f.input :license_plate %>
     <%= f.input :price %>
-    <%= f.input :engine %>
+    <%= f.input :engine, collection: ["Disel", "Gasoline", "Eletrical", "gpl", "hybrid"] %>
     <%= f.input :description, :as => :string %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :image %>
+    <%= f.input :image_cache, as: :hidden %>
     <%= f.button :submit %>
   <% end %>
 </div>
