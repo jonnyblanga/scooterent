@@ -12,6 +12,8 @@
 
 <div class="show-container">
 
+  <%= render partial: "partials/map_show", locals: {scooter: @scooter} %>
+
   <%= render partial: "partials/all_info", locals: {scooter: @scooter} %>
 
   <%= render partial: "partials/cost_form", locals: {reservation: @reservation, scooter: @scooter} %>

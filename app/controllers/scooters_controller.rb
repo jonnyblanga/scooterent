@@ -20,6 +20,13 @@ class ScootersController < ApplicationController
   end
 
   def show
+    @markers = [
+        {
+        lng: @scooter.longitude,
+        lat: @scooter.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { scooter: @scooter })
+        #image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+        }]
     @reservation = Reservation.new
 
     @reservations = @scooter.reservations
