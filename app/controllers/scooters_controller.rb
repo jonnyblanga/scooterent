@@ -16,6 +16,7 @@ class ScootersController < ApplicationController
   end
 
   def show
+    @reviews = Review.where(reservation: Reservation.where(scooter: @scooter)).all
     @reservation = Reservation.new
 
     @reservations = @scooter.reservations
@@ -41,7 +42,6 @@ class ScootersController < ApplicationController
   end
 
   def edit
-    @scooter
   end
 
   def update

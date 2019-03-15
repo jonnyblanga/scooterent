@@ -22,7 +22,7 @@
   align-items: center;
   padding: 5px;
   margin: 5px;
-  width: 70%;
+  width: 90%;
 }
 
 .card-product img {
@@ -61,4 +61,9 @@
 
 .card-btn {
   flex: 0 0 10%;
+}
+
+#reviews p {
+  font-size: 18px;
+
 }
