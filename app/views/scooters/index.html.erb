@@ -19,7 +19,7 @@
         <div class="text">
           <h2 class="landingpage-cards-brand"><%= scooter.make %> </h2>
           <h2 class="landingpage-cards-model"><%= scooter.model %> </h2>
-          <h2 class="landingpage-cards-engine"><%= scooter.engine %> </h2>
+          <h2 class="landingpage-cards-price"><%= "$#{scooter.price}" %> </h2>
         </div>
       </div>
       <% end %>
@@ -27,7 +27,7 @@
     </div>
   <% end %>
   <% else %>
-    <h1>No Scooters Available In Your Area :(</h1>
+    <h1>No scooters available in your area :(</h1>
   <% end %>
   </div>
 </div>
