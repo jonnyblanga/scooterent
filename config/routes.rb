@@ -19,9 +19,13 @@ Rails.application.routes.draw do
   get 'pages/user_page'
   get 'pages/user_page2'
   get 'pages/user_page3'
+  get 'pages/user_page4'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :scooters do #except: :index
     resources :reservations, except: [:edit, :update]
   end
+
+  get "scooters/:scooter_id/reservations/:reservation_id/approve", to: "reservations#approve", as: :approve
+  get "scooters/:scooter_id/reservations/:reservation_id/reject", to: "reservations#reject", as: :reject
 end
