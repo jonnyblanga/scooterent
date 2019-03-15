@@ -30,4 +30,6 @@ Rails.application.routes.draw do
     end
   end
 
+  get "scooters/:scooter_id/reservations/:reservation_id/approve", to: "reservations#approve", as: :approve
+  get "scooters/:scooter_id/reservations/:reservation_id/reject", to: "reservations#reject", as: :reject
 end
