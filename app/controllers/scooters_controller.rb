@@ -3,8 +3,11 @@ class ScootersController < ApplicationController
   # before_action :query_params
   def index
     @query = params[:query]
-    @scooters = Scooter.where.not(latitude: nil, longitude: nil) if @query.nil?
-    @scooters = Scooter.near(@query, 2000) if @query
+    if @query.empty?
+      @scooters = Scooter.where.not(latitude: nil, longitude: nil)
+    else
+      @scooters = Scooter.near(@query, 1000) if @query
+    end
 
     @markers = @scooters.map do |scooter|
       {
