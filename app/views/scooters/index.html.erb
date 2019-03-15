@@ -8,6 +8,7 @@
 
 <div class="card-container col-md-12">
   <div class="row">
+  <% if @scooters.size > 0 %>
   <% @scooters.each do |scooter| %>
     <div class="col-md-4 contenitor">
       <% if scooter.image.present? %>
@@ -23,6 +24,9 @@
       <% end %>
       <% end %>
     </div>
+  <% end %>
+  <% else %>
+    <h1>No Scooters Available In Your Area :(</h1>
   <% end %>
   </div>
 </div>
